@@ -9,6 +9,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import me.rtgamingwdt.elemental.block.BlockInit;
 import me.rtgamingwdt.elemental.item.ItemInit;
 
 
@@ -21,11 +22,12 @@ public class Elemental {
 
     public Elemental() {
         
-        IEventBus eventbus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ItemInit.register(eventbus);
-
-        eventbus.addListener(this::setup);
+        ItemInit.register(bus);
+        BlockInit.register(bus);
+        
+        bus.addListener(this::setup);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
