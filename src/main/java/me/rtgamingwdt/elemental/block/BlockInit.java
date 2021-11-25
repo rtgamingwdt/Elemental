@@ -1,7 +1,6 @@
 package me.rtgamingwdt.elemental.block;
 
 import java.util.function.Supplier;
-
 import me.rtgamingwdt.elemental.Elemental;
 import me.rtgamingwdt.elemental.item.ItemInit;
 import net.minecraft.world.item.BlockItem;
@@ -18,7 +17,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class BlockInit {
     
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Elemental.MOD_ID);
-    public static final RegistryObject<Block> FIRESTONE_ORE = registerBlock("firestone_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(12f)));
+    public static final RegistryObject<Block> FIRESTONE_ORE = registerBlock("firestone_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(12f)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
