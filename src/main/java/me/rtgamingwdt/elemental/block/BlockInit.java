@@ -18,7 +18,15 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class BlockInit {
     
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Elemental.MOD_ID);
-    public static final RegistryObject<Block> FIRESTONE_ORE = registerBlock("firestone_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(12f)));
+    
+    public static final RegistryObject<Block> FIRESTONE_ORE = registerBlock("firestone_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(12f)));
+    public static final RegistryObject<Block> LIGHTNINGSTONE_ORE = registerBlock("lightningstone_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(12f)));
+    public static final RegistryObject<Block> EARTHSTONE_ORE = registerBlock("earthstone_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(12f)));
+    public static final RegistryObject<Block> ICESTONE_ORE = registerBlock("icestone_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(12f)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

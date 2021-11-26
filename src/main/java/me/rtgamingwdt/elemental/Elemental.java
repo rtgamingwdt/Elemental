@@ -26,9 +26,9 @@ public class Elemental {
 
         ItemInit.register(bus);
         BlockInit.register(bus);
-        
-        bus.addListener(this::setup);
 
+        bus.addListener(this::setup);
+        
         MinecraftForge.EVENT_BUS.register(this);
     }
 

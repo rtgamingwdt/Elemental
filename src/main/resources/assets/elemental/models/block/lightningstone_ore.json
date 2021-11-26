@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "texures": {
+        "all": "elemental:block/lightningstone_ore"
+    }
+}
