@@ -1,7 +1,6 @@
 package me.rtgamingwdt.elemental.block;
 
 import java.util.function.Supplier;
-
 import me.rtgamingwdt.elemental.Elemental;
 import me.rtgamingwdt.elemental.item.ItemInit;
 import net.minecraft.world.item.BlockItem;
