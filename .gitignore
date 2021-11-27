@@ -25,4 +25,5 @@ run
 # Files from Forge MDK
 forge*changelog.txt
 
-# My folders
+# Gitpod files
+.gitpod.yml
