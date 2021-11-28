@@ -26,13 +26,13 @@ public class BlockInit {
 
 
     public static final RegistryObject<Block> FIRESTONE_ORE = registerBlock("firestone_ore",
-            () -> new OreBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
     public static final RegistryObject<Block> LIGHTNINGSTONE_ORE = registerBlock("lightningstone_ore",
-            () -> new OreBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
     public static final RegistryObject<Block> EARTHSTONE_ORE = registerBlock("earthstone_ore",
-            () -> new OreBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
     public static final RegistryObject<Block> ICESTONE_ORE = registerBlock("icestone_ore",
-            () -> new OreBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
