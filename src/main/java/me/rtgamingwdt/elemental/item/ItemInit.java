@@ -1,7 +1,6 @@
 package me.rtgamingwdt.elemental.item;
 
 import me.rtgamingwdt.elemental.Elemental;
-import net.minecraft.world.item.CreativeModeTab;
 // import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
