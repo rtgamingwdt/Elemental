@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.OreBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-// import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fmllegacy.RegistryObject;
@@ -26,13 +26,13 @@ public class BlockInit {
 
 
     public static final RegistryObject<Block> FIRESTONE_ORE = registerBlock("firestone_ore",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
     public static final RegistryObject<Block> LIGHTNINGSTONE_ORE = registerBlock("lightningstone_ore",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
     public static final RegistryObject<Block> EARTHSTONE_ORE = registerBlock("earthstone_ore",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
-    public static final RegistryObject<Block> ICESTONE_ORE = registerBlock("icestone_ore",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).sound(SoundType.STONE), UniformInt.of(3, 7)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
+    public static final RegistryObject<Block> ICESTONE_ORE = registerBlock("icestone_ore',
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
