@@ -31,7 +31,7 @@ public class BlockInit {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
     public static final RegistryObject<Block> EARTHSTONE_ORE = registerBlock("earthstone_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
-    public static final RegistryObject<Block> ICESTONE_ORE = registerBlock("icestone_ore',
+    public static final RegistryObject<Block> ICESTONE_ORE = registerBlock("icestone_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
