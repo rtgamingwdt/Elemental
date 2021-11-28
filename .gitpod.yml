@@ -3,4 +3,4 @@ tasks:
       echo 'TODO: build project'
     command: |
       echo 'TODO: start app'
-      echo ''
+      echo 'sdk install java'

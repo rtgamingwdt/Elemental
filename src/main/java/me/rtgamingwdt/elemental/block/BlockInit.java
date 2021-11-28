@@ -2,6 +2,7 @@ package me.rtgamingwdt.elemental.block;
 
 import java.util.function.Supplier;
 import me.rtgamingwdt.elemental.Elemental;
+import me.rtgamingwdt.elemental.block.ore.*;
 import me.rtgamingwdt.elemental.item.ItemInit;
 import me.rtgamingwdt.elemental.item.ModCreativeModeTab;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -9,13 +10,9 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.OreBlock;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,15 +21,14 @@ public class BlockInit {
     
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Elemental.MOD_ID);
 
-
     public static final RegistryObject<Block> FIRESTONE_ORE = registerBlock("firestone_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
+            () -> new FirestoneOreBlock(BlockBehaviour.Properties.of(Material.STONE).strength(10f), UniformInt.of(3, 7)));
     public static final RegistryObject<Block> LIGHTNINGSTONE_ORE = registerBlock("lightningstone_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
+            () -> new LightningStoneOre(BlockBehaviour.Properties.of(Material.STONE).strength(10f), UniformInt.of(3, 7)));
     public static final RegistryObject<Block> EARTHSTONE_ORE = registerBlock("earthstone_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
+            () -> new EarthstoneOreBlock(BlockBehaviour.Properties.of(Material.STONE).strength(10f), UniformInt.of(3, 7)));
     public static final RegistryObject<Block> ICESTONE_ORE = registerBlock("icestone_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f)));
+            () -> new IcestoneOreBlock(BlockBehaviour.Properties.of(Material.STONE).strength(10f), UniformInt.of(3, 7)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
