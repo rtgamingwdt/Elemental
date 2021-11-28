@@ -5,7 +5,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class ModCreativeModeTab {
 
-    public static final CreativeModeTab ELEMENTAL_TAB = new CreativeModeTab("Elemental Mod") {
+    public static final CreativeModeTab ELEMENTAL_TAB = new CreativeModeTab("ELEMENTAL_TAB") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(ItemInit.DEMONITE.get());
