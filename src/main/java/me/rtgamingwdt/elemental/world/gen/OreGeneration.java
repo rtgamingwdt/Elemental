@@ -31,10 +31,13 @@ public class OreGeneration {
             BlockState state = ore.getBlock().get().defaultBlockState();
             int veinSize = ore.getVeinSize();
             int height = ore.getHeight();
+            //TODO: Add deepslate texture
             ConfiguredFeature<?, ?> ORE = Feature.ORE
             .configured(new OreConfiguration(List.of(
                 OreConfiguration.target(OreConfiguration.Predicates.STONE_ORE_REPLACEABLES,
-                state)), 
+                state), 
+                OreConfiguration.target(OreConfiguration.Predicates.DEEPSLATE_ORE_REPLACEABLES,
+                state)),
                 veinSize)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(height)).squared().count(veinSize);
                 OVERWORLD_ORES.add(register(ore.getName() ,ORE));
         }
