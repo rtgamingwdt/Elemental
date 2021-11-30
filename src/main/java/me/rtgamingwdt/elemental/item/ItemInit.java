@@ -3,6 +3,7 @@ package me.rtgamingwdt.elemental.item;
 import me.rtgamingwdt.elemental.Elemental;
 // import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,12 +18,24 @@ public class ItemInit {
     () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
     public static final RegistryObject<Item> EARTHSTONE = ITEMS.register("earthstone", 
     () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
-    public static final RegistryObject<Item> FIRESTONE = ITEMS.register("firestone", 
-    () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+
     public static final RegistryObject<Item> ICESTONE = ITEMS.register("icestone", 
     () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
     public static final RegistryObject<Item> LIGHTNINGSTONE = ITEMS.register("lightningstone", 
     () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+
+    // Firestone Items
+    public static final RegistryObject<Item> FIRESTONE = ITEMS.register("firestone",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+
+    public static final RegistryObject<Item> FIRESTONE_SWORD = ITEMS.register("Firestone_sword",
+            () -> new SwordItem(ModTiers.FIRESTONE, 4, 4f,
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+
+
+
+
+
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
