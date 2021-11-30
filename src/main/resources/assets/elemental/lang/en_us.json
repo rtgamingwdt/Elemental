@@ -3,5 +3,11 @@
     "block.elemental.firestone_ore": "Firestone Ore",
     "block.elemental.icestone_ore": "Icestone Ore",
     "block.elemental.lightningstone_ore": "Lightningstone Ore",
-    "itemGroup.elemental_tab": "Elemental Mod"
+    "itemGroup.elemental_tab": "Elemental Mod",
+
+    "item.elemental.firestone_sword": "Firestone Sword",
+    "item.elemental.firestone_shovel": "Firestone Shovel",
+    "item.elemental.firestone_pickaxe": "Firestone Pickaxe",
+    "item.elemental.firestone_hoe": "Firestone Hoe",
+    "item.elemental.firestone_axe": "Firestone Axe"
 }

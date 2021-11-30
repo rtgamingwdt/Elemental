@@ -2,8 +2,7 @@ package me.rtgamingwdt.elemental.item;
 
 import me.rtgamingwdt.elemental.Elemental;
 // import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,12 +27,21 @@ public class ItemInit {
     public static final RegistryObject<Item> FIRESTONE = ITEMS.register("firestone",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
 
-    public static final RegistryObject<Item> FIRESTONE_SWORD = ITEMS.register("Firestone_sword",
-            () -> new SwordItem(ModTiers.FIRESTONE, 3, 4f,
+    public static final RegistryObject<Item> FIRESTONE_SWORD = ITEMS.register("firestone_sword",
+            () -> new SwordItem(ModTiers.FIRESTONE, 2, 3f,
                     new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
-
-
-
+    public static final RegistryObject<Item> FIRESTONE_AXE = ITEMS.register("firestone_axe",
+            () -> new AxeItem(ModTiers.FIRESTONE, 3, 4f,
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+    public static final RegistryObject<Item> FIRESTONE_HOE = ITEMS.register("firestone_hoe",
+            () -> new HoeItem(ModTiers.FIRESTONE, 0, 1f,
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+    public static final RegistryObject<Item> FIRESTONE_PICKAXE = ITEMS.register("firestone_pickaxe",
+            () -> new PickaxeItem(ModTiers.FIRESTONE, 0, -1f,
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+    public static final RegistryObject<Item> FIRESTONE_SHOVEL = ITEMS.register("firestone_shovel",
+            () -> new ShovelItem(ModTiers.FIRESTONE, 0, -1f,
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
 
 
 
