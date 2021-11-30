@@ -29,19 +29,20 @@ public class ItemInit {
 
     public static final RegistryObject<Item> FIRESTONE_SWORD = ITEMS.register("firestone_sword",
             () -> new SwordItem(ModTiers.FIRESTONE, 2, 3f,
-                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
+
     public static final RegistryObject<Item> FIRESTONE_AXE = ITEMS.register("firestone_axe",
             () -> new AxeItem(ModTiers.FIRESTONE, 3, 4f,
-                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
     public static final RegistryObject<Item> FIRESTONE_HOE = ITEMS.register("firestone_hoe",
             () -> new HoeItem(ModTiers.FIRESTONE, 0, 1f,
-                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
     public static final RegistryObject<Item> FIRESTONE_PICKAXE = ITEMS.register("firestone_pickaxe",
             () -> new PickaxeItem(ModTiers.FIRESTONE, 0, -1f,
-                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
     public static final RegistryObject<Item> FIRESTONE_SHOVEL = ITEMS.register("firestone_shovel",
             () -> new ShovelItem(ModTiers.FIRESTONE, 0, -1f,
-                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
+                    new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
 
 
 
