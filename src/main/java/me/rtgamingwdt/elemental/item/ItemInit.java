@@ -29,7 +29,7 @@ public class ItemInit {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
 
     public static final RegistryObject<Item> FIRESTONE_SWORD = ITEMS.register("Firestone_sword",
-            () -> new SwordItem(ModTiers.FIRESTONE, 4, 4f,
+            () -> new SwordItem(ModTiers.FIRESTONE, 3, 4f,
                     new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
 
 
