@@ -12,7 +12,8 @@ Simply drag the file into your AppData\Roaming\.minecraft\mods folder and run th
 ```
 ## Authors
 
-- [@mezotv](https://www.github.com/mezotv)
 - [@rtgamingwdt](https://github.com/rtgamingwdt)
+- [@Mezotv](https://www.github.com/mezotv)
+- [@StrixxEm](https://github.com/StrixxEm)
 
 ##  [This mod was developed and published by AlphaStudioz](#Content)
