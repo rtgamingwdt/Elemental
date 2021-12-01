@@ -56,9 +56,9 @@ public class FireSwordItem extends TieredItem implements Vanishable {
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
         pStack.hurtAndBreak(1, pAttacker, (p_43296_) -> {
             p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-
         });
-        return true;
+        pTarget.setSecondsOnFire(5);
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 
     /**
