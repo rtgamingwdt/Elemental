@@ -21,7 +21,7 @@ public class CommonModEvents {
 
     @SubscribeEvent
     public static void onHurt(LivingAttackEvent event) {
-        if(event.getEntity() instanceof Player) {
+        if(event.getSource().getEntity() instanceof Player) {
             Player player = (Player) event.getSource().getEntity();
             if(player.getItemInHand(InteractionHand.MAIN_HAND) == new ItemStack(ItemInit.FIRESTONE_SWORD.get())) {
                 //TODO add fire immunity with armor
