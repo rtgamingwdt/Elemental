@@ -32,6 +32,11 @@ public class ItemInit {
             () -> new SwordItem(ModTiers.FIRESTONE, 3, 4f,
                     new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB)));
 
+
+
+
+
+
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
     }
