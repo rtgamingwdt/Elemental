@@ -25,9 +25,7 @@ public class CommonModEvents {
             Player player = (Player) event.getSource().getEntity();
             if(player.getItemInHand(InteractionHand.MAIN_HAND) == new ItemStack(ItemInit.FIRESTONE_SWORD.get())) {
                 //TODO add fire immunity with armor
-                if(!(event.getEntity().isOnFire())) {
-                    event.getEntityLiving().setSecondsOnFire(25);
-                }
+                event.getEntityLiving().setSecondsOnFire(25);
             }
         }
     }
