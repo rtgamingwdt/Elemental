@@ -1,0 +1,13 @@
+{
+  "block.elemental.earthstone_ore": "Bhumi Pathar",
+  "block.elemental.firestone_ore": "Agni Pathar",
+  "block.elemental.icestone_ore": "Barfeela Pathar",
+  "block.elemental.lightningstone_ore": "Bijli pathare",
+  "itemGroup.elemental_tab": "Sarva maulik pathar",
+
+  "item.elemental.firestone_sword": "Agni pathar",
+  "item.elemental.firstone_shovel": "Agni belacha",
+  "item.elemental.firestone_pickaxe": "Agni hal",
+  "item.elemental.firestone_hoe": "Agni khrappa",
+  "item.elemental.firestone_axe": "Agni kulhadi"
+}
