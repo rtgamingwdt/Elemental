@@ -2,8 +2,12 @@ package me.rtgamingwdt.elemental.item;
 
 import me.rtgamingwdt.elemental.Elemental;
 // import net.minecraft.world.item.CreativeModeTab;
+<<<<<<< HEAD
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
+=======
+import net.minecraft.world.item.*;
+>>>>>>> parent of 7ed7208 (Tested stuff)
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
