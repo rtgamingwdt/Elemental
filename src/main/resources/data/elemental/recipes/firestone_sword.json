@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     " F ",
     " F ",
