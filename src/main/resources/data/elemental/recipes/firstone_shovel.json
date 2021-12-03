@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " F ",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "F": {
+      "item": "elemental:firestone"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "elemental:firestone_shovel"
+  }
+}
