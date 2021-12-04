@@ -1,11 +1,55 @@
 {
+  "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1,
+      "rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:stone"
+        }
+      ]
+    },
+    {
+      "rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "elemental:firestone_ore",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "enchantments": [
+                  {
+                    "enchantment": "minecraft:silk_touch"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "elemental:firestone",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": [
+                  "elemental:firestone_pickaxe"
+                ],
+                "enchantments": [
+                  {}
+                ]
+              }
+            }
+          ]
         }
       ]
     }
