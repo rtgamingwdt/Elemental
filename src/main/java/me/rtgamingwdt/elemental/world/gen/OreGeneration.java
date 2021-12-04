@@ -23,23 +23,27 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 public class OreGeneration {
 
     private static final List<ConfiguredFeature<?, ?>> OVERWORLD_ORES = new ArrayList<>();
-    // private static final List<ConfiguredFeature<?, ?>> END_ORES = new ArrayList<>();
-    // private static final List<ConfiguredFeature<?, ?>> NETHER_ORES = new ArrayList<>();
-    
+    // private static final List<ConfiguredFeature<?, ?>> END_ORES = new
+    // ArrayList<>();
+    // private static final List<ConfiguredFeature<?, ?>> NETHER_ORES = new
+    // ArrayList<>();
+
     public static void generateOres() {
-        for(OverworldOreType ore : OverworldOreType.values()) {
+        for (OverworldOreType ore : OverworldOreType.values()) {
             BlockState state = ore.getBlock().get().defaultBlockState();
             int veinSize = ore.getVeinSize();
             int height = ore.getHeight();
-            //TODO: Add deepslate texture
+            // TODO: Add deepslate texture
             ConfiguredFeature<?, ?> ORE = Feature.ORE
-            .configured(new OreConfiguration(List.of(
-                OreConfiguration.target(OreConfiguration.Predicates.STONE_ORE_REPLACEABLES,
-                state), 
-                OreConfiguration.target(OreConfiguration.Predicates.DEEPSLATE_ORE_REPLACEABLES,
-                state)),
-                veinSize)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(height)).squared().count(veinSize);
-                OVERWORLD_ORES.add(register(ore.getName() ,ORE));
+                    .configured(new OreConfiguration(List.of(
+                            OreConfiguration.target(OreConfiguration.Predicates.STONE_ORE_REPLACEABLES,
+                                    state),
+                            OreConfiguration.target(OreConfiguration.Predicates.DEEPSLATE_ORE_REPLACEABLES,
+                                    state)),
+                            veinSize))
+                    .rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(height)).squared()
+                    .count(veinSize);
+            OVERWORLD_ORES.add(register(ore.getName(), ORE));
         }
     }
 
@@ -49,16 +53,18 @@ public class OreGeneration {
                 configuredFeature);
     }
 
-    @Mod.EventBusSubscriber(modid = Elemental.MOD_ID, bus = Bus.FORGE) 
+    @Mod.EventBusSubscriber(modid = Elemental.MOD_ID, bus = Bus.FORGE)
     public static class ForgeBusSubscriber {
         @SubscribeEvent
         public static void biomeLoading(BiomeLoadingEvent event) {
             List<Supplier<ConfiguredFeature<?, ?>>> features = event.getGeneration()
                     .getFeatures(Decoration.UNDERGROUND_ORES);
 
-            switch(event.getCategory()) {
-                // case NETHER -> OreGeneration.NETHER_ORES.forEach(ore -> features.add(() -> ore));
-                // case THEEND -> OreGeneration.END_ORES.forEach(ore -> features.add(() -> ore));
+            switch (event.getCategory()) {
+                // case NETHER -> OreGeneration.NETHER_ORES.forEach(ore -> features.add(() ->
+                // ore));
+                // case THEEND -> OreGeneration.END_ORES.forEach(ore -> features.add(() ->
+                // ore));
                 default -> OreGeneration.OVERWORLD_ORES.forEach(ore -> features.add(() -> ore));
             }
         }

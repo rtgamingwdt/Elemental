@@ -14,7 +14,7 @@ public class IcestoneOreBlock extends OreBlock {
         super(properties);
         this.xpRange = uniformInt;
     }
-    
+
     @Override
     public int getExpDrop(BlockState state, LevelReader reader, BlockPos pos, int fortune, int silktouch) {
         return silktouch == 0 ? this.xpRange.sample(RANDOM) : 0;

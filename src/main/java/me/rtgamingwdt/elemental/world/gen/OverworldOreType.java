@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.util.Lazy;
 
 public enum OverworldOreType {
-    
+
     EARTHSTONE(Lazy.of(BlockInit.EARTHSTONE_ORE), "earthstone_ore", 4, 8, 25, 50),
     FIRESTONE(Lazy.of(BlockInit.FIRESTONE_ORE), "firestone_ore", 4, 8, 25, 50),
     ICESTONE(Lazy.of(BlockInit.ICESTONE_ORE), "icestone_ore", 4, 8, 25, 50),
@@ -48,7 +48,7 @@ public enum OverworldOreType {
     public int getVeinSize() {
         try {
             return new Random().nextInt(maxVeinSize - minVeinSize) + minVeinSize;
-        } catch(IllegalArgumentException exception) {
+        } catch (IllegalArgumentException exception) {
             return maxVeinSize;
         }
     }
@@ -64,14 +64,14 @@ public enum OverworldOreType {
     public int getHeight() {
         try {
             return new Random().nextInt(maxHeight - minHeight) + minHeight;
-        } catch(IllegalArgumentException exception) {
+        } catch (IllegalArgumentException exception) {
             return minHeight;
         }
     }
 
     public static OverworldOreType get(Block block) {
-        for(OverworldOreType ore : values()) {
-            if(block == ore.block) {
+        for (OverworldOreType ore : values()) {
+            if (block == ore.block) {
                 return ore;
             }
         }

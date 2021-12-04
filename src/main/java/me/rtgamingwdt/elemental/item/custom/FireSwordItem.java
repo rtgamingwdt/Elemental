@@ -1,6 +1,5 @@
 package me.rtgamingwdt.elemental.item.custom;
 
-
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -23,12 +22,15 @@ public class FireSwordItem extends TieredItem implements Vanishable {
     /** Modifiers applied when the item is in the mainhand of a user. */
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
-    public FireSwordItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Item.Properties pProperties) {
+    public FireSwordItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier,
+            Item.Properties pProperties) {
         super(pTier, pProperties);
-        this.attackDamage = (float)pAttackDamageModifier + pTier.getAttackDamageBonus();
+        this.attackDamage = (float) pAttackDamageModifier + pTier.getAttackDamageBonus();
         Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double)this.attackDamage, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)pAttackSpeedModifier, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
+                (double) this.attackDamage, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
+                (double) pAttackSpeedModifier, AttributeModifier.Operation.ADDITION));
         this.defaultModifiers = builder.build();
     }
 
@@ -45,12 +47,14 @@ public class FireSwordItem extends TieredItem implements Vanishable {
             return 15.0F;
         } else {
             Material material = pState.getMaterial();
-            return material != Material.PLANT && material != Material.REPLACEABLE_PLANT && !pState.is(BlockTags.LEAVES) && material != Material.VEGETABLE ? 1.0F : 1.5F;
+            return material != Material.PLANT && material != Material.REPLACEABLE_PLANT && !pState.is(BlockTags.LEAVES)
+                    && material != Material.VEGETABLE ? 1.0F : 1.5F;
         }
     }
 
     /**
-     * Current implementations of this method in child classes do not use the entry argument beside ev. They just raise
+     * Current implementations of this method in child classes do not use the entry
+     * argument beside ev. They just raise
      * the damage on the stack.
      */
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
@@ -62,9 +66,11 @@ public class FireSwordItem extends TieredItem implements Vanishable {
     }
 
     /**
-     * Called when a Block is destroyed using this Item. Return true to trigger the "Use Item" statistic.
+     * Called when a Block is destroyed using this Item. Return true to trigger the
+     * "Use Item" statistic.
      */
-    public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
+    public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos,
+            LivingEntity pEntityLiving) {
         if (pState.getDestroySpeed(pLevel, pPos) != 0.0F) {
             pStack.hurtAndBreak(2, pEntityLiving, (p_43276_) -> {
                 p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
@@ -82,10 +88,13 @@ public class FireSwordItem extends TieredItem implements Vanishable {
     }
 
     /**
-     * Gets a map of item attribute modifiers, used by ItemSword to increase hit damage.
+     * Gets a map of item attribute modifiers, used by ItemSword to increase hit
+     * damage.
      */
+
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot pEquipmentSlot) {
-        return pEquipmentSlot == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers(pEquipmentSlot);
+        return pEquipmentSlot == EquipmentSlot.MAINHAND ? this.defaultModifiers
+                : super.getDefaultAttributeModifiers(pEquipmentSlot);
     }
 
     @Override

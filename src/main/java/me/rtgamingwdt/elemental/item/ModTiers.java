@@ -6,6 +6,6 @@ import net.minecraftforge.common.Tags;
 
 public class ModTiers {
 
-    public static  final ForgeTier  FIRESTONE = new ForgeTier(5, 1000, 3f, 4f, 10, Tags.Blocks.NEEDS_GOLD_TOOL,
+    public static final ForgeTier FIRESTONE = new ForgeTier(5, 1000, 3f, 4f, 10, Tags.Blocks.NEEDS_GOLD_TOOL,
             () -> Ingredient.of(ItemInit.FIRESTONE.get()));
 }

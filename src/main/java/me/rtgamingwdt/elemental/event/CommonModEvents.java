@@ -9,7 +9,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod.EventBusSubscriber(modid = Elemental.MOD_ID, bus = Bus.MOD)
 public class CommonModEvents {
-    
+
     @SubscribeEvent
     public static void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(OreGeneration::generateOres);
