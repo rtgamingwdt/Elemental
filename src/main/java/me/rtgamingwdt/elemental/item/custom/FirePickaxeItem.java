@@ -7,7 +7,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
@@ -18,11 +17,12 @@ import me.rtgamingwdt.elemental.item.ItemInit;
 import me.rtgamingwdt.elemental.block.BlockInit;
 
 import java.util.Map;
+import java.util.Objects;
 
-public class FirePickaxeItem extends CustomDiggerItem {
-    private static final Map<Block, Item> BLOW_TORCH_ITEM_CRAFT =
+public class FirePickaxeItem extends Item {
+    private static final Map<Block, Item> can_be_burned =
             new ImmutableMap.Builder<Block, Item>()
-                    //.put(BlockInit.TITANIUM_BLOCK.get(), ItemInit.TITANIUM_NUGGET.get())
+                    //.put(ModBlocks.TITANIUM_BLOCK.get(), ModItems.TITANIUM_NUGGET.get())
                     .put(Blocks.SAND, Blocks.GLASS.asItem())
                     .build();
 
@@ -37,14 +37,14 @@ public class FirePickaxeItem extends CustomDiggerItem {
             BlockPos positionClicked = pContext.getClickedPos();
             Block blockClicked = level.getBlockState(positionClicked).getBlock();
 
-            if(canBlowTorch(blockClicked)) {
+            if(canBurned(blockClicked)) {
                 ItemEntity entityItem = new ItemEntity(level,
                         positionClicked.getX(), positionClicked.getY(), positionClicked.getZ(),
-                        new ItemStack(BLOW_TORCH_ITEM_CRAFT.get(blockClicked), 1));
+                        new ItemStack(can_be_burned.get(blockClicked), 1));
 
                 level.destroyBlock(positionClicked, false);
                 level.addFreshEntity(entityItem);
-                pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(), p -> {
+                pContext.getItemInHand().hurtAndBreak(1, Objects.requireNonNull(pContext.getPlayer()), p -> {
                     p.broadcastBreakEvent(pContext.getHand());
                 });
             } else {
@@ -56,7 +56,7 @@ public class FirePickaxeItem extends CustomDiggerItem {
         return InteractionResult.SUCCESS;
     }
 
-    private boolean canBlowTorch(Block block) {
-        return BLOW_TORCH_ITEM_CRAFT.containsKey(block);
+    private boolean canBurned(Block block) {
+        return can_be_burned.containsKey(block);
     }
 }

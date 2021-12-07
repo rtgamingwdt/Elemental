@@ -43,7 +43,7 @@ public class ItemInit {
                                         new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
 
         public static final RegistryObject<Item> FIRESTONE_PICKAXE = ITEMS.register("firestone_pickaxe",
-                        () -> new FirePickaxeItem(ModTiers.FIRESTONE, 0, -1f,
+                        () -> new FirePickaxeItem(
                                         new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
 
         public static final RegistryObject<Item> FIRESTONE_SHOVEL = ITEMS.register("firstone_shovel",
