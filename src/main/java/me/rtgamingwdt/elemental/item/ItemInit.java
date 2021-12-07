@@ -1,6 +1,7 @@
 package me.rtgamingwdt.elemental.item;
 
 import me.rtgamingwdt.elemental.Elemental;
+import me.rtgamingwdt.elemental.item.custom.FirePickaxeItem;
 import me.rtgamingwdt.elemental.item.custom.FireSwordItem;
 import net.minecraft.world.item.*;
 
@@ -42,7 +43,7 @@ public class ItemInit {
                                         new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
 
         public static final RegistryObject<Item> FIRESTONE_PICKAXE = ITEMS.register("firestone_pickaxe",
-                        () -> new PickaxeItem(ModTiers.FIRESTONE, 0, -1f,
+                        () -> new FirePickaxeItem(ModTiers.FIRESTONE, 0, -1f,
                                         new Item.Properties().tab(ModCreativeModeTab.ELEMENTAL_TAB).fireResistant()));
 
         public static final RegistryObject<Item> FIRESTONE_SHOVEL = ITEMS.register("firstone_shovel",
