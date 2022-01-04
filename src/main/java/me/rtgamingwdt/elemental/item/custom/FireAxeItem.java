@@ -1,6 +1,10 @@
 package me.rtgamingwdt.elemental.item.custom;
 
+import java.util.Map;
+import java.util.Objects;
+
 import com.google.common.collect.ImmutableMap;
+
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.TextComponent;
@@ -13,24 +17,26 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import java.util.Map;
-import java.util.Objects;
 
-public class FirePickaxeItem extends Item {
+public class FireAxeItem extends Item {
+
     private static final Map<Block, Item> canSmelt = new ImmutableMap.Builder<Block, Item>()
-            // .put(ModBlocks.TITANIUM_BLOCK.get(), ModItems.TITANIUM_NUGGET.get())
-            .put(Blocks.GOLD_ORE, Items.GOLD_INGOT)
-            .put(Blocks.DEEPSLATE_GOLD_ORE, Items.GOLD_INGOT)
-            .put(Blocks.NETHER_GOLD_ORE, Items.GOLD_INGOT)
-            .put(Blocks.IRON_ORE, Items.IRON_INGOT)
-            .put(Blocks.DEEPSLATE_IRON_ORE, Items.IRON_INGOT)
-            .put(Blocks.COPPER_ORE, Items.COPPER_INGOT)
-            .put(Blocks.DEEPSLATE_COPPER_ORE, Items.COPPER_INGOT)
-            .put(Blocks.ANCIENT_DEBRIS, Items.NETHERITE_SCRAP)
+            .put(Blocks.OAK_LOG, Items.CHARCOAL)
+            .put(Blocks.SPRUCE_LOG, Items.CHARCOAL)
+            .put(Blocks.BIRCH_LOG, Items.CHARCOAL)
+            .put(Blocks.JUNGLE_LOG, Items.CHARCOAL)
+            .put(Blocks.ACACIA_LOG, Items.CHARCOAL)
+            .put(Blocks.DARK_OAK_LOG, Items.CHARCOAL)
+            .put(Blocks.STRIPPED_SPRUCE_LOG, Items.CHARCOAL)
+            .put(Blocks.STRIPPED_BIRCH_LOG, Items.CHARCOAL)
+            .put(Blocks.STRIPPED_JUNGLE_LOG, Items.CHARCOAL)
+            .put(Blocks.STRIPPED_ACACIA_LOG, Items.CHARCOAL)
+            .put(Blocks.STRIPPED_DARK_OAK_LOG, Items.CHARCOAL)
+            .put(Blocks.STRIPPED_OAK_LOG, Items.CHARCOAL)
             .build();
 
-    public FirePickaxeItem(Properties pProperties) {
-        super(pProperties);
+    public FireAxeItem(Properties properties) {
+        super(properties);
     }
 
     @Override
